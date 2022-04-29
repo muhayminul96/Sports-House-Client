@@ -1,9 +1,8 @@
 import React from "react";
-import { Button, Form, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Button, Form } from "react-bootstrap";
 import GoogleLogin from "../SocialLogin/GoogleLogin";
 
-const Login = () => {
+const Register = () => {
   return (
     <div className="my-5">
       <h1>Login</h1>
@@ -18,13 +17,10 @@ const Login = () => {
         <Button className="w-100" variant="dark" type="submit">
           Login
         </Button>
-        <div className="d-flex align-center justify-center w-50 mx-auto">
-          <p className="">Are You new? <span>Register now  </span></p>
-        </div>
       </Form>
       <GoogleLogin></GoogleLogin>
     </div>
   );
 };
 
-export default Login;
+export default Register;

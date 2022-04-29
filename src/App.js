@@ -5,6 +5,7 @@ import NotFoundError from './Pages/NotFoundError/NotFoundError';
 import Header from './Pages/shared/Header/Header';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Authentication/Login/Login';
+import Register from './Pages/Authentication/Register/Register';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFoundError></NotFoundError>}></Route>
       </Routes>
     </div>
