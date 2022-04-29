@@ -1,5 +1,5 @@
 import React from 'react';
-import auth from '../../../firebaseInit'
+import auth from '../../../firebase.init'
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Loading from '../../shared/Loadig/Loading';
 
