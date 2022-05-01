@@ -1,27 +1,69 @@
 import React from "react";
 import { Button, Form, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
+import Loading from "../../shared/Loadig/Loading";
 import GoogleLogin from "../SocialLogin/GoogleLogin";
 
+
+
 const Login = () => {
+  const navigate = useNavigate();
+  const [
+    signInWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useSignInWithEmailAndPassword(auth);
+  let email ;
+  let password ;
+
+
+  const handleLoginSubmit = (event) =>{
+      event.preventDefault()
+      email = event.target.email.value
+      password = event.target.password.value
+      signInWithEmailAndPassword(email, password)    
+  }
+
+  if(loading){
+    return <Loading/>
+  }
+
+  if(user){
+    navigate('/')
+  }
   return (
     <div className="my-5">
-      <h1>Login</h1>
-      <Form className="w-50 mx-auto my-5">
+      <h1 className="fs-1 fw-bolder text-primary">Login</h1>
+      <Form className="w-50 mx-auto my-5" onSubmit={handleLoginSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control type="email" name="email" placeholder="Enter email" required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control type="password" name="password" placeholder="Password" required/>
         </Form.Group>
-        <Button className="w-100" variant="dark" type="submit">
+        <p>{error?.message}</p>
+        <Button className="w-100 mb-3  fw-bolder" variant="dark" type="submit">
           Login
         </Button>
-        <div className="d-flex align-center justify-center w-50 mx-auto">
-          <p className="">Are You new? <span>Register now  </span></p>
-        </div>
+
+        <p className="my-3 align-baseline">
+          Are You new?
+          <span
+            className="btn btn-link text-decoration-none"
+            onClick={() => {
+              navigate("/signup");
+            }}
+          >
+            Register now
+          </span>
+        </p>
       </Form>
+      <p className="fs-4">------------ Or ------------</p>
+
       <GoogleLogin></GoogleLogin>
     </div>
   );
