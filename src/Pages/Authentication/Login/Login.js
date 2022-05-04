@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Form, Nav } from "react-bootstrap";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../shared/Loadig/Loading";
 import GoogleLogin from "../SocialLogin/GoogleLogin";
@@ -10,20 +10,21 @@ import GoogleLogin from "../SocialLogin/GoogleLogin";
 
 const Login = () => {
   const navigate = useNavigate();
+  // login switch 
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const [
     signInWithEmailAndPassword,
     user,
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
-  let email ;
-  let password ;
 
 
   const handleLoginSubmit = (event) =>{
       event.preventDefault()
-      email = event.target.email.value
-      password = event.target.password.value
+     const email = event.target.email.value
+     const password = event.target.password.value
       signInWithEmailAndPassword(email, password)    
   }
 
@@ -32,7 +33,7 @@ const Login = () => {
   }
 
   if(user){
-    navigate('/')
+    navigate(from, { replace: true })
   }
   return (
     <div className="my-5">
