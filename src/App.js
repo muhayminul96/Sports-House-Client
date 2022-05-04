@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Authentication/Login/Login';
 import Register from './Pages/Authentication/Register/Register';
 import RequireAuth from './RequireAuth'
+import Footer from './Pages/shared/Footer/Footer';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         }></Route>
         <Route path='*' element={<NotFoundError></NotFoundError>}></Route>
       </Routes>
+
+      <Footer></Footer>
     </div>
   );
 }
