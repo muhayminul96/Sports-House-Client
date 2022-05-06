@@ -13,25 +13,25 @@ const ItemDetails = () => {
   const {
     _id,
     name,
-    SupplierName,
+    supplier,
     supplierEmail,
     shortDescription,
-    quantety,
+    quantity,
     price,
     img,
   } = item;
   return (
     <Card className="mx-auto my-5" style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="https://i.ibb.co/S0NZdmS/basketball.jpg" />
+      <Card.Img variant="top" src={img} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>{shortDescription}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroupItem>Price {price} taka</ListGroupItem>
-        <ListGroupItem>quantity {quantety} </ListGroupItem>
+        <ListGroupItem>quantity {quantity} </ListGroupItem>
         <ListGroupItem>sold {0} </ListGroupItem>
-        <ListGroupItem>Supplier {SupplierName}</ListGroupItem>
+        <ListGroupItem>Supplier {supplier}</ListGroupItem>
       </ListGroup>
       <Card.Body>
         <Card.Link href="#">Card Link</Card.Link>
