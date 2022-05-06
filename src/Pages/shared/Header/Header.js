@@ -31,10 +31,15 @@ const Header = () => {
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
+            {
+              user ?
+              <>
+              <Nav.Link as={Link} to="/manageitems">Manage Items</Nav.Link>
+              <Nav.Link as={Link} to="/additem">Add Items</Nav.Link>
+              </>
+              :
+              ''
+            }
             {user ? (
               <Nav.Link onClick={handleLogout}>Log Out</Nav.Link>
             ) : (
