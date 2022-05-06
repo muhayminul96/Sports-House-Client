@@ -7,10 +7,10 @@ const Item = ({ item }) => {
   const {
     _id,
     name,
-    SupplierName,
+    supplier,
     supplierEmail,
     shortDescription,
-    quantety,
+    quantity,
     price,
     img,
   } = item;
@@ -22,9 +22,9 @@ const Item = ({ item }) => {
           <h2>{name}</h2>
         </Card.Title>
         <Card.Text>{shortDescription}</Card.Text>
-        <h5>Supplier {SupplierName}</h5>
+        <h5>Supplier {supplier}</h5>
         <h5>price {price}</h5>
-        <h5>Quantity {quantety} </h5>
+        <h5>Quantity {quantity} </h5>
         <Button
           onClick={() => {
             navigate(`/item/${_id}`);

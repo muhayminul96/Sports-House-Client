@@ -10,6 +10,7 @@ import RequireAuth from "./RequireAuth";
 import Footer from "./Pages/shared/Footer/Footer";
 import ItemDetails from "./Pages/ItemDetails/ItemDetails";
 import AddItem from "./Pages/AddItem/AddItem";
+import ManageIten from "./Pages/ManageItem/ManageItem";
 
 function App() {
   return (
@@ -41,6 +42,14 @@ function App() {
           element={
             <RequireAuth>
               <AddItem />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/manageitems"
+          element={
+            <RequireAuth>
+              <ManageIten />
             </RequireAuth>
           }
         ></Route>
