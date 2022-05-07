@@ -5,12 +5,11 @@ import auth from "./firebase.init";
 import Loading from "./Pages/shared/Loadig/Loading";
 
 const RequireAuth = ({ children }) => {
-    const [user, loading, error] = useAuthState(auth);
-    console.log(user)
+  const [user, loading, error] = useAuthState(auth);
   const location = useLocation();
 
-  if(loading){
-      return <Loading/>
+  if (loading) {
+    return <Loading />;
   }
 
   if (!user) {
@@ -22,8 +21,6 @@ const RequireAuth = ({ children }) => {
   }
 
   return children;
-
-  
 };
 
 export default RequireAuth;

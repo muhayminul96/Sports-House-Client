@@ -15,7 +15,7 @@ const ItemDetails = () => {
     name,
     supplier,
     supplierEmail,
-    shortDescription,
+    description,
     quantity,
     price,
     img,
@@ -25,7 +25,7 @@ const ItemDetails = () => {
       <Card.Img variant="top" src={img} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
-        <Card.Text>{shortDescription}</Card.Text>
+        <Card.Text>{description}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroupItem>Price {price} taka</ListGroupItem>

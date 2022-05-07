@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import auth from "../../firebase.init";
 
 const AddItem = () => {
-  const { register, handleSubmit, setValue } = useForm();
+  const { register, handleSubmit, setValue , reset } = useForm();
   const [user, loading, error] = useAuthState(auth);
   if (loading) {
   }
@@ -18,14 +18,16 @@ const AddItem = () => {
     if (data.price <= 0 || data.quantity <= 0) {
       alert("your price and quantity is more then 0");
     } else {
-        
       fetch("http://localhost:5000/items", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       })
         .then((response) => response.json())
-        .then((result) => console.log(result));
+        .then((result) => {
+          console.log(result);
+          reset();
+        });
     }
   };
   //   like id, name, image, description, price, quantity, supplier name, sold,
