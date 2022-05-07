@@ -20,16 +20,30 @@ const ItemDetails = () => {
         quantity = item.quantity - 1;
         sold = item.sold + 1;
       } else {
-        alert("this is stoke out");
+        alert("This is stoke out");
+        sold = item.sold;
+        quantity = item.quantity;
       }
     } else {
-      const updateQuantetyValue = parseInt(updateQuantety.current.value);
-      updateQuantety.current.value = "";
-      console.log(updateQuantetyValue);
-      if (updateQuantetyValue > 0) {
-        quantity = updateQuantetyValue;
+
+      if (parseInt(updateQuantety.current.value)) {
+        const updateQuantetyValue = parseInt(updateQuantety.current.value);
+        updateQuantety.current.value = "";
+        console.log(updateQuantetyValue);
+        if (updateQuantetyValue >= 0) {
+          quantity = updateQuantetyValue;
+          sold = item.sold;
+          console.log(quantity, sold);
+        } else {
+          alert("quantity must be a positive number");
+          sold = item.sold;
+          quantity = item.quantity;
+          
+        }
+      } else {
+        alert("quantity must be a number");
         sold = item.sold;
-        console.log(quantity, sold);
+        quantity = item.quantity;
       }
     }
 
@@ -78,11 +92,9 @@ const ItemDetails = () => {
             ref={updateQuantety}
           ></input>{" "}
           <button
-          className=" ms-1 btn btn-dark"
-
+            className=" ms-1 btn btn-dark"
             onClick={() => {
               handleQuantity(_id, "restoke");
-              
             }}
           >
             Update Stoke
