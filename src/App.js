@@ -11,7 +11,8 @@ import Footer from "./Pages/shared/Footer/Footer";
 import ItemDetails from "./Pages/ItemDetails/ItemDetails";
 import AddItem from "./Pages/AddItem/AddItem";
 import ManageIten from "./Pages/ManageItem/ManageItem";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="App">
@@ -25,7 +26,7 @@ function App() {
           path="/item/:itemId"
           element={
             <RequireAuth>
-              <ItemDetails/>
+              <ItemDetails />
             </RequireAuth>
           }
         ></Route>
@@ -57,6 +58,7 @@ function App() {
       </Routes>
 
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

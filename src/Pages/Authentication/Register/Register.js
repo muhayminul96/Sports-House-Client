@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { matcher } from "../../../costumFunction";
 import auth from "../../../firebase.init";
 import Loading from "../../shared/Loadig/Loading";
 import GoogleLogin from "../SocialLogin/GoogleLogin";
 
 const Register = () => {
+  const [sendEmailVerification, sending, EmailVarificationError] = useSendEmailVerification(auth);
   const navigate = useNavigate();
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
@@ -15,7 +17,7 @@ const Register = () => {
   let password;
   let confirmPassword;
 
-  const handleSignupSubmit = (event) => {
+  const handleSignupSubmit = async (event) => {
     event.preventDefault();
 
     // collect email password
@@ -28,13 +30,15 @@ const Register = () => {
     // password validation and login with email
 
     if (matcher(password, confirmPassword)) {
-      createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+          await sendEmailVerification();
+          toast('verification mail is sended')
     } else {
       alert("Password and confirm Password not match");
     }
   };
 
-  if (loading) {
+  if (loading || sending ) {
     return <Loading />;
   }
 

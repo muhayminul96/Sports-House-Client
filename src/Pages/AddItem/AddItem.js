@@ -1,10 +1,11 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const AddItem = () => {
-  const { register, handleSubmit, setValue , reset } = useForm();
+  const { register, handleSubmit, setValue, reset } = useForm();
   const [user, loading, error] = useAuthState(auth);
   if (loading) {
   }
@@ -27,6 +28,7 @@ const AddItem = () => {
         .then((result) => {
           console.log(result);
           reset();
+          toast("Item is added");
         });
     }
   };
