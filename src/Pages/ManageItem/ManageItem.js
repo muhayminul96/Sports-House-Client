@@ -1,9 +1,12 @@
 import React from "react";
-import { Table } from "react-bootstrap";
+import { Button, Container, Table } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import useItems from "../../hooks/useItems";
 import TableBody from "./TableBody";
 
 const ManageItem = () => {
+    const navigate = useNavigate();
+
   const [items, setItems] = useItems();
   const handleDelete = (id) => {
     const permission = window.confirm(
@@ -22,6 +25,16 @@ const ManageItem = () => {
     }
   };
   return (
+      <Container>
+        <div className="my-2 text-end">
+        <Button
+          variant="dark"
+          onClick={() => navigate("/additem")}
+          size="lg"
+        >
+          Add Item
+        </Button>
+        </div>
     <Table
       striped
       bordered
@@ -35,6 +48,7 @@ const ManageItem = () => {
           <th>Id</th>
           <th>Name</th>
           <th>Quantity</th>
+          <th>Sold</th>
           <th>Price</th>
           <th>Supplier</th>
           <th>Supplier Email</th>
@@ -47,16 +61,7 @@ const ManageItem = () => {
         ))}
       </tbody>
     </Table>
-
-    // <div>
-    //   {items.map((item) => (
-    //     <>
-    //       <p>
-    //         {item.name} <button onClick={()=>handleDelete(item._id)}> Delete</button>
-    //       </p>
-    //     </>
-    //   ))}
-    // </div>
+    </Container>
   );
 };
 

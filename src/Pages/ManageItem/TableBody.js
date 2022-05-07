@@ -8,6 +8,7 @@ const TableBody = ({ item, handleDelete }) => {
     supplierEmail,
     description,
     quantity,
+    sold,
     price,
     img,
   } = item;
@@ -17,6 +18,7 @@ const TableBody = ({ item, handleDelete }) => {
       <td>{_id.slice(6, 15)}</td>
       <td>{name}</td>
       <td>{quantity}</td>
+      <td>{sold}</td>
       <td>{price}</td>
       <td>{supplier}</td>
       <td>{supplierEmail}</td>
