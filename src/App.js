@@ -14,6 +14,7 @@ import ManageIten from "./Pages/ManageItem/ManageItem";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Blogs from "./Pages/Blog/Blogs/Blogs";
+import MyItems from "./Pages/MyItems/MyItems";
 function App() {
   return (
     <div className="App">
@@ -53,6 +54,14 @@ function App() {
           element={
             <RequireAuth>
               <ManageIten />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/myitems"
+          element={
+            <RequireAuth>
+              <MyItems />
             </RequireAuth>
           }
         ></Route>

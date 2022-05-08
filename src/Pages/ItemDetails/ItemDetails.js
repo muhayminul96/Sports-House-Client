@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ItemDetails = () => {
   const updateQuantety = useRef(0);
@@ -25,7 +25,6 @@ const ItemDetails = () => {
         quantity = item.quantity;
       }
     } else {
-
       if (parseInt(updateQuantety.current.value)) {
         const updateQuantetyValue = parseInt(updateQuantety.current.value);
         updateQuantety.current.value = "";
@@ -38,7 +37,6 @@ const ItemDetails = () => {
           alert("quantity must be a positive number");
           sold = item.sold;
           quantity = item.quantity;
-          
         }
       } else {
         alert("quantity must be a number");
@@ -110,8 +108,8 @@ const ItemDetails = () => {
         >
           Delivered
         </Card.Link>
-        <Card.Link className="btn btn-dark" href="#">
-          Another Link
+        <Card.Link as={Link} className="btn btn-dark" to="/manageitems">
+          Manage Items
         </Card.Link>
       </Card.Body>
     </Card>
