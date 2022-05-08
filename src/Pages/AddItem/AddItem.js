@@ -19,7 +19,7 @@ const AddItem = () => {
     if (data.price <= 0 || data.quantity <= 0) {
       alert("your price and quantity is more then 0");
     } else {
-      fetch("http://localhost:5000/items", {
+      fetch("https://guarded-river-88298.herokuapp.com/items", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

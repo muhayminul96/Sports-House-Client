@@ -7,7 +7,7 @@ const ItemDetails = () => {
   const { itemId } = useParams();
   const [item, setItem] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/item/${itemId}`)
+    fetch(`https://guarded-river-88298.herokuapp.com/item/${itemId}`)
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, []);
@@ -49,7 +49,7 @@ const ItemDetails = () => {
     setItem(newItem);
     console.log(newItem);
 
-    fetch(`http://localhost:5000/item/${id}`, {
+    fetch(`https://guarded-river-88298.herokuapp.com/item/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ quantity, sold }),
