@@ -13,6 +13,7 @@ import AddItem from "./Pages/AddItem/AddItem";
 import ManageIten from "./Pages/ManageItem/ManageItem";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Blogs from "./Pages/Blog/Blogs/Blogs";
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Register></Register>}></Route>
+        <Route path="/qusetion" element={<Blogs></Blogs>}></Route>
         <Route
           path="/item/:itemId"
           element={

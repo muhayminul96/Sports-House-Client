@@ -1,0 +1,30 @@
+[
+  {
+    "id": "624c02cebec4f8c936df8a1e",
+    "title": " Difference between JavaScript and Nodejs",
+    "blogText": "JavaScript is a client-side scripting language that is lightweight, cross-platform, and interpreted. Both Java and HTML include it. Node.js, on the other hand, is a server-side programming language based on Google Chrome V8. As a result, network-centric applications are built with it. It's a distributed system designed for real-time data-intensive applications. JavaScript's main advantages include a wide range of interfaces and interactivity and just the right amount of server contact and direct input to visitors. On the other hand, Node.js has a node package manager with over 500 modules and the ability to handle concurrent requests. It also has the special capability of supporting micro-service architecture as well as IoT.",
+    "blogUrl" : "https://www.javatpoint.com/javascript-vs-nodejs"
+  },
+  {
+    "id": "624c02ce0a76f6fc67382eb1",
+    "title": "When should you use nodejs and when should you use mongodb?",
+    "blogText": "NodeJS and MongoDB are two distinct technologies. MonogDB is a database system that allows you to effectively store documents in a database and execute operations such as data updates and document searches based on certain criteria. The responsibility of NodeJS is to run your application. ",
+    "blogUrl" : "https://www.mongodb.com/nodejs-database"
+
+    
+  },
+  {
+    "id": "624c02cea403162ac3f8edb7",
+    "title": "Differences between sql and nosql databases.",
+    "blogText": "SQL is a Relational Database Management System (RDBMS), whereas NoSQL is a Non-relational or Distributed Database. NoSQL databases employ dynamic schema for unstructured data, whereas SQL databases have a predetermined schema. SQL databases are scalable vertically, whereas NoSQL databases are scalable horizontally. SQL databases are table-based databases, whereas NoSQL databases can be document-based, key-value pair, or graph databases. ",
+    "blogUrl" : "https://www.guru99.com/sql-vs-nosql.html"
+
+  },
+  {
+    "id": "624c02cea403162ac3f8edc7",
+    "title": " What is the purpose of jwt and how does it work?",
+    "blogText": "JWT (JSON Web Token) is an open standard that allows two parties — a client and a server — to share security information. JSON items, containing a set of claims, are encoded in each JWT. JWTs use a cryptographic technique to ensure that the claims cannot be changed after the token has been issued. JWTs are unique among web tokens in that they include a set of claims. Claims are a type of communication between two parties. The nature of these claims is determined by the use case at hand. A claim could specify who issued the token, how long it is valid, or what permissions the client has been given.",
+    "blogUrl" : "https://www.akana.com/blog/what-is-jwt"
+
+  }
+]

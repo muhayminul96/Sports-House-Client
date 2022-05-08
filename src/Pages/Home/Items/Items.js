@@ -9,7 +9,7 @@ const Items = () => {
   const navigate = useNavigate();
   const [items, setItems] = useItems();
   return (
-    <div className="container">
+    <div className="container" id="items">
       <div className="my-2 text-end">
         <Button
           variant="dark"

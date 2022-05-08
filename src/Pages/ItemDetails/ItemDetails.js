@@ -108,7 +108,7 @@ const ItemDetails = () => {
           }}
           className="btn btn-dark"
         >
-          Shift
+          Delivered
         </Card.Link>
         <Card.Link className="btn btn-dark" href="#">
           Another Link

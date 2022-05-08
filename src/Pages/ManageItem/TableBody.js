@@ -15,13 +15,10 @@ const TableBody = ({ item, handleDelete }) => {
 
   return (
     <tr>
-      <td>{_id.slice(6, 15)}</td>
       <td>{name}</td>
       <td>{quantity}</td>
       <td>{sold}</td>
       <td>{price}</td>
-      <td>{supplier}</td>
-      <td>{supplierEmail}</td>
       <td>
         <button onClick={() => handleDelete(_id)}>Delete</button>
       </td>

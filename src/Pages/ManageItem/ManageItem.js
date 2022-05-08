@@ -25,7 +25,7 @@ const ManageItem = () => {
     }
   };
   return (
-      <Container>
+      <Container className="container-fluid">
         <div className="my-2 text-end">
         <Button
           variant="dark"
@@ -45,13 +45,10 @@ const ManageItem = () => {
     >
       <thead>
         <tr>
-          <th>Id</th>
           <th>Name</th>
           <th>Quantity</th>
           <th>Sold</th>
           <th>Price</th>
-          <th>Supplier</th>
-          <th>Supplier Email</th>
           <th>Action</th>
         </tr>
       </thead>
